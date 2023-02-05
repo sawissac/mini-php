@@ -1,0 +1,10 @@
+RewriteEngine on
+
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteCond %{REQUEST_FILENAME}\.php -f
+
+RewriteRule ^country$ country.php?type=both [QSA,NC,L]
+RewriteRule ^country/([a-zA-Z]+)$ country.php?type=both&country=$1 [NC,L]
+RewriteRule ^country/by-name$ country.php?type=name [QSA,NC,L]
+RewriteRule ^country/by-code$ country.php?type=code [QSA,NC,L]
